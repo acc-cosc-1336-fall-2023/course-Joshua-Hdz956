@@ -22,4 +22,4 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(100, multiply_numbers(10,10))
         self.assertEqual(40, multiply_numbers(8,5))
         self.assertEqual(72, multiply_numbers(8,9))
-
+        self.assertEqual(72, multiply_numbers(9,8))
