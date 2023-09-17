@@ -15,7 +15,6 @@ while True:
 
 result = decisions.get_options_ratio(options, total)
 
-result = decisions.get_faculty_rating(result)
-print("Your rating is: " + result)
+print("Your rating is: " + decisions.get_faculty_rating(result))
 
 

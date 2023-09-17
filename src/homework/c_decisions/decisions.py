@@ -3,7 +3,7 @@ def get_options_ratio(option, total):
     ratio = round((option/total), 2)  
     return ratio
 
-#
+
 def get_faculty_rating(ratio):
     score = ""
     if .9 <= ratio <= 1:

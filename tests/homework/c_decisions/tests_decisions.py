@@ -1,5 +1,6 @@
 import unittest
 
+
 from src.homework.c_decisions.decisions import get_options_ratio, get_faculty_rating
 
 
