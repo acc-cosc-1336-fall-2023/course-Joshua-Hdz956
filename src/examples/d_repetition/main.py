@@ -15,5 +15,5 @@ import repetition
 #repetition.for_num_range_s_start_value(5,10)
 #repetition.for_num_range_with_step_value(26,-3,-4)
 #repetition.for_display_squares(0, 5)
-
-repetition.while_validate_user_input()
+#repetition.while_validate_user_input()
+repetition.nested_while_loop(3,3)
