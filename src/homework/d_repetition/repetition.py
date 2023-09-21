@@ -26,6 +26,8 @@ def display_menu():
 def run_menu():
     display_menu()
     option = input("Select your option 1, 2, or 3: ")
+    if (option != "1" and option != "2" and option != "3"):
+        print("Invalid Option, Exiting Program")
 
     handle_menu_option(option)
 
