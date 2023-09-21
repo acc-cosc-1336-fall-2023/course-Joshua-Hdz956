@@ -49,7 +49,7 @@ def option_1_selected():
     
     product = get_factorial(num)
     print("The factorial of",num,"is:",product)
-    option_3_selected()
+    exit_selected()
 
 def option_2_selected():
     num = -1
@@ -62,9 +62,9 @@ def option_2_selected():
                 print("That option is invalid. Input an Number 1-100. ")
     sum = sum_odd_numbers(num)
     print("The sum of the odd numbers of",num,"is equal to",sum)
-    option_3_selected()
+    exit_selected()
 
-def option_3_selected():
+def exit_selected():
     while True:
         exit = input("Enter yes if you want to continue. Enter no if you want to exit: ")
         if exit == "yes" or exit == "y" or exit =='Y' or exit == 'YES':
@@ -75,3 +75,16 @@ def option_3_selected():
             break
         else:
             print("Enter either yes/no")
+
+def option_3_selected():
+    while True:
+        exit = input("Are you sure you want to exit y/n: ")
+        if exit == "yes" or exit == "y" or exit =='Y' or exit == 'YES':
+            print("Exiting Program")
+            break
+        elif exit == "no" or exit == "n" or exit == 'N' or exit == 'NO':
+            run_menu()
+            break
+        else:
+            print("Enter either yes/no")
+
