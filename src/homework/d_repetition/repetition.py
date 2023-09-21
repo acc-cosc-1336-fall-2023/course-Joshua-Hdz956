@@ -39,7 +39,7 @@ def handle_menu_option(option):
 
 def option_1_selected():
     num = -1
-    while num < 0 or num > 10:
+    while num < 1 or num > 10:
         while True:
             try:
                 num = int(input("Please Enter a Number 1-10: "))
@@ -53,7 +53,7 @@ def option_1_selected():
 
 def option_2_selected():
     num = -1
-    while num < 0 or num > 100:
+    while num < 1 or num > 100:
         while True:
             try:
                 num = int(input("Please Enter a Number 1-100: "))
