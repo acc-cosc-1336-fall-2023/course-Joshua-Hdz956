@@ -1,10 +1,12 @@
 def get_factorial(num):
     product = 1
-
-    for n in range(1,num+1):
-        product *= n
+    if num < 0:
+        return "Invalid, you can't factorial negative numbers"
+    else:
+        for n in range(1,num+1):
+            product *= n
+        return product
     
-    return product
 
 def sum_odd_numbers(num):
     sum = 0

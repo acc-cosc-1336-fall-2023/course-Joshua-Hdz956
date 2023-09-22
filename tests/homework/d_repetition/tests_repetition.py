@@ -8,6 +8,8 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(get_factorial(4), 24)
         self.assertEqual(get_factorial(5), 120)
         self.assertEqual(get_factorial(6), 720)
+        self.assertEqual(get_factorial(0), 1)
+        self.assertEqual(get_factorial(-1), "Invalid, you can't factorial negative numbers")
     
     def test_sun_odd_numbers(self):
         self.assertEqual(sum_odd_numbers(7), 16)
