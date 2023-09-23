@@ -43,13 +43,13 @@ def handle_menu_option(option):
 
 def option_1_selected():
     num = -1
-    while num < 1 or num > 10:
+    while num < 1 or num > 9:
         while True:
             try:
-                num = int(input("Please Enter a Number 1-10: "))
+                num = int(input("Please Enter a Number 1-9: "))
                 break
             except ValueError:
-                print("That option is invalid. Input an Number 1-10. ")
+                print("That option is invalid. Input an Number 1-9. ")
     
     product = get_factorial(num)
     print("The factorial of",num,"is:",product)
@@ -57,13 +57,13 @@ def option_1_selected():
 
 def option_2_selected():
     num = -1
-    while num < 1 or num > 100:
+    while num < 1 or num > 99:
         while True:
             try:
-                num = int(input("Please Enter a Number 1-100: "))
+                num = int(input("Please Enter a Number 1-99: "))
                 break
             except ValueError:
-                print("That option is invalid. Input an Number 1-100. ")
+                print("That option is invalid. Input an Number 1-99. ")
     sum = sum_odd_numbers(num)
     print("The sum of the odd numbers of",num,"is equal to",sum)
     exit_selected()
