@@ -9,6 +9,7 @@ def get_hamming_distance(dna1, dna2):
         return hamming_distance
 
 def get_dna_complement(dna):
+    dna = dna.upper()
     verify = verify_if_dna(dna)
     if verify == "DNA":
         complement = dna.replace("A", "t").replace("T","a").replace("C","g").replace("G","c")
@@ -19,6 +20,7 @@ def get_dna_complement(dna):
         return "This sequence is not a DNA strand."
 
 def verify_if_dna(dna):
+    dna = dna.upper()
     count = 0
     if dna == '':
         return "This is NOT a DNA strand"
