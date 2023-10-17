@@ -31,3 +31,27 @@ def display_list_w_for_reverse_again():
     list1 = list1[::-1]
     for x in range(len(list1)):
         print(list1[x])
+
+def get_list_total_while(list1):
+    indx = 0
+    sum = 0
+    while(indx < len(list1)):
+        sum += list1[indx]
+        indx += 1
+    return sum
+
+def get_list_total_for(list1):
+    sum = 0
+    for i in range(0, len(list1)):
+        sum += list1[i]
+    return sum
+
+def list_ref_parameter(list1):
+    print(list1)
+    print(id(list1))
+    list1[0] = 0
+
+def get_list_return_value(list1):
+    list1 = [5,10,20]
+    list1[0] = 0
+    return list1
