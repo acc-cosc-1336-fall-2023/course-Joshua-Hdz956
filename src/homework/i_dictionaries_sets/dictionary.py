@@ -1,12 +1,12 @@
 def get_p_distance(list1, list2):
     count = 0
     if len(list1) != len(list2):
-        return 'Invalid, Lists NOT of Equal Length'
+        raise ValueError("LISTS NOT EQUAL IN LENGTH")
     else:
         for x in range(len(list1)):
             if list1[x] != list2[x]:
                 count +=1
-        return count/10
+        return round((count/len(list1)),2)
 
 def get_p_distance_matrix(big_list):
     n = len(big_list)
