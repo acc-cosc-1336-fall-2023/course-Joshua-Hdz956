@@ -19,16 +19,18 @@ def run_option(input):
         option_2()
         
 def option_1():
-    print("\nYou selected Option1")
+    print("\nYou selected Option 1")
     y = create_list()
     while True:
         try:
-            z = dictionary.get_p_distance_matrix(y)
+            z = dictionary.get_p_distance_matrix_for(y)
             break
         except ValueError:
             print("STRINGS NOT OF EQUAL LENGTH, TRY AGAIN")
             y = create_list()
-    print(f"The matrix distance of your list is {z}")
+    print("\nThe matrix distance of your list is:")
+    for i in range(len(z)):
+        print(z[i])
     print('Returning to Main Menu, Select 1 to Try Again, Select 2 to Exit\n')
     run_menu()
     

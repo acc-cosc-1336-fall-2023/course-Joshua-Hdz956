@@ -8,7 +8,18 @@ def get_p_distance(list1, list2):
                 count +=1
         return round((count/len(list1)),2)
 
-def get_p_distance_matrix(big_list):
+def get_p_distance_matrix_for(nested_list):
+    n = len(nested_list)
+    matrix = []
+    for i in range(n):
+        list = []
+        for j in range(n):
+            x = get_p_distance(nested_list[i], nested_list[j])
+            list.append(x)
+        matrix.append(list)
+    return matrix
+
+def get_p_distance_matrix_while(big_list):
     n = len(big_list)
     matrix = []
     i = 0
@@ -25,3 +36,5 @@ def get_p_distance_matrix(big_list):
         i += 1
         
     return matrix
+
+        
