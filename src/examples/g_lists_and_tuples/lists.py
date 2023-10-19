@@ -52,6 +52,19 @@ def list_ref_parameter(list1):
     list1[0] = 0
 
 def get_list_return_value(list1):
-    list1 = [5,10,20]
     list1[0] = 0
     return list1
+
+def search_for_item_in_list(item, list1):
+    return item in list1
+
+def get_time_table(max_value):
+    table = []
+
+    for r in range(1, max_value+1):
+        row = []
+        for c in range(1, max_value+1):
+            row.append(r*c)
+        table.append(row)
+        
+    return table
