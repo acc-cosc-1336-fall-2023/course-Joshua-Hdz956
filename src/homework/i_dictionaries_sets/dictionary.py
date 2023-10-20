@@ -6,7 +6,7 @@ def get_p_distance(list1, list2):
         for x in range(len(list1)):
             if list1[x] != list2[x]:
                 count +=1
-        return round((count/len(list1)),2)
+        return round((count/len(list1)),5)
 
 def get_p_distance_matrix_for(nested_list):
     n = len(nested_list)
