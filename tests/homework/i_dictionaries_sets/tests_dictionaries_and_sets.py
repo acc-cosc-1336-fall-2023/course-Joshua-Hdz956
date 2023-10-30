@@ -35,3 +35,30 @@ class Test_Config(unittest.TestCase):
         [0.1, 0.3, 0.2, 0.0]
         ]
         self.assertEqual(get_p_distance_matrix_while(nested_list), values)
+
+    def test_play_both_sports(self):
+        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+        self.assertEqual(baseball.intersection(basketball), set(['Carmen','Alicia']))
+
+    def test_play_either_sport(self):
+        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+        self.assertEqual(baseball.union(basketball),set(['Jodi','Carmen','Aida','Alicia','Eva','Sarah']))
+
+    def test_play_baseball_not_basketball(self):
+        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+        self.assertEqual(baseball.difference(basketball),set(['Jodi','Aida']))
+
+    def test_play_baseball_not_basket_also_play_basketball_not_baseball(self):
+        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+        self.assertEqual(basketball.difference(baseball), set(['Eva','Sarah']))
+        self.assertEqual(baseball.difference(basketball),set(['Jodi','Aida']))
+
+
+    def test_one_sport_but_not_both(self):
+        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
+        self.assertEqual(baseball.symmetric_difference(basketball), set(['Jodi','Aida','Eva','Sarah']))
