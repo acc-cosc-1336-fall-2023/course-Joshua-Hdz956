@@ -75,3 +75,29 @@ def read_sales_date(file_n,):
     print('------------')
     print(f'{total_sales:.2f}')
     in_file.close()
+
+def write_field_date(file_name, file_mode):
+    out_file = open(file_name, file_mode)
+
+    user = 'Y'
+    while(user.upper()=='Y'):
+
+        name = input("Enter Name: ")
+        dept_id = input("Enter DEPT ID: ")
+        lang = input("Enter Language: ")
+
+        out_file.write(f'{name},{dept_id},{lang} \n')
+        user = input("Enter y to continue...")
+    out_file.close()
+def read_field_date(filename):
+    in_file = open(filename, 'r')
+
+    for line in in_file:
+        fields = line.rstrip('\n').split(',')
+        name = fields[0]
+        dept_id = fields[1]
+        lang = fields[2]
+        print(f'{name} {dept_id} {lang}')
+
+    
+    in_file.close()
