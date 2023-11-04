@@ -1,5 +1,7 @@
 import unittest
 from src.homework.i_dictionaries_sets.dictionary import get_p_distance, get_p_distance_matrix_for, get_p_distance_matrix_while
+baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
+basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
 class Test_Config(unittest.TestCase):
     """
     def test_p_distance(self):
@@ -38,35 +40,24 @@ class Test_Config(unittest.TestCase):
         self.assertEqual(get_p_distance_matrix_while(nested_list), values)
 """
     def test_play_both_sports(self):
-        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
         self.assertEqual(baseball.intersection(basketball), set(['Carmen','Alicia']))
         print("Play both sports: ", baseball.intersection(basketball))
 
     def test_play_either_sport(self):
-        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
         self.assertEqual(baseball.union(basketball),set(['Jodi','Carmen','Aida','Alicia','Eva','Sarah']))
         print("Play any sports: ", baseball.union(basketball))
 
     def test_play_baseball_not_basketball(self):
-        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
         self.assertEqual(baseball.difference(basketball),set(['Jodi','Aida']))
         print("Play Baseball but not Basketball: ", baseball.difference(basketball))
 
 
     def test_play_basket_not_base_also_play_base_not_basket(self):
-        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
         self.assertEqual(basketball.difference(baseball), set(['Eva','Sarah']))
         print("Play Basketball but not Baseball: ", basketball.difference(baseball))
         self.assertEqual(baseball.difference(basketball),set(['Jodi','Aida']))
         print("Play Baseball but not Basketball: ", baseball.difference(basketball))
 
-
     def test_play_one_sport_but_not_both(self):
-        baseball = set(['Jodi', 'Carmen', 'Aida', 'Alicia'])
-        basketball = set(['Eva', 'Carmen', 'Alicia', 'Sarah'])
-        self.assertEqual(baseball.symmetric_difference(basketball), set(['Jodi','Aida','Eva','Sarah']))
-        print("Play only one sport: ", baseball.symmetric_difference(basketball))
+        self.assertEqual(basketball.symmetric_difference(baseball), set(['Jodi','Aida','Eva','Sarah']))
+        print("Play only one sport: ", basketball.symmetric_difference(baseball))
