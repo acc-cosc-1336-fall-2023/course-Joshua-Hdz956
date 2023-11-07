@@ -101,3 +101,22 @@ def read_field_date(filename):
 
     
     in_file.close()
+
+def write_city_list_file(file_name):
+    cities = ['New York','Boston','Atlanta','Dallas']
+    out_file = open(file_name, 'w')
+
+    for city in cities:
+        out_file.write(city + '\n')
+
+    out_file.close()
+
+def read_city_list_file(file_name):
+    in_file = open(file_name, 'r')
+    cities = []
+    for line in in_file:
+        cities.append(line.rstrip('\n'))
+
+    for x in range(len(cities)):
+        print(cities[x])
+    

@@ -9,5 +9,7 @@ import files
 #files.write_sales_data('sales.txt', 'a')
 #files.read_sales_date('sales.txt')
 
-files.write_field_date('data.txt', 'w')
-files.read_field_date('data.txt')
+#files.write_field_date('data.txt', 'w')
+#files.read_field_date('data.txt')
+#files.write_city_list_file("cities.txt")
+files.read_city_list_file("cities.txt")
