@@ -8,3 +8,6 @@ class Die:
         
     def get_role_value(self):
         return self.__roll_value
+    
+    def __str__(self):
+        return f"The rolled value is {self.__roll_value}"
