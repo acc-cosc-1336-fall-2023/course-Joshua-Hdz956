@@ -1,4 +1,5 @@
-import bank_account
+import bank_account, atm, menu
 
 account = bank_account.BankAccount(50)
-print(account.get_balance())
+my_atm = atm.atm(account)
+menu.run_menu(my_atm)
