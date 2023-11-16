@@ -1,43 +1,53 @@
-
-from customer import Customer
-from atm import ATM
+import random, time
+from src.examples.j_classes.customer import Customer
+from src.examples.j_classes.customer_data import CustomerData
+from src.examples.j_classes.atm import ATM
 
 def scan_card(customer_list_size):
-    choice = int(input("PIN: "))#0-2 for now
-    return choice
+    choice = input('Enter something...')#pause
+    return random.randint(0, customer_list_size-1)
 
 def display_menu():
-    print("COSC Bank")
-    print("1 - Deposit")
-    print("2 - Withdraw")
-    print("3 - Display Balance")
-    print("4 - Exit")
+    print('COSC Bank')
+    print('1-Deposit')
+    print('2-Withdraw')
+    print('3-Display Balance')
+    print('4-Exit')
 
-def run_menu(atm):
-    list_customers = [Customer(), Customer(), Customer()]
+def run_menu():
+    random.seed(int(time.time()))
+    customer_data = CustomerData ()
+    list_customers = customer_data.get_customers();
 
-    while True:
+    while(True):
         menu_choice = 0
         customer_index = scan_card(len(list_customers))
+        
         customer = list_customers[customer_index]
-        account_index = int(input("Enter 1 for checking, 2 for savings: "))
-        while account_index not in(1,2):
-            account_index = int(input("Invalid \nEnter 1 for checking, 2 for savings: "))
-        account = customer.get_account(account_index)
-        atm_instance = atm(account)
+        
+        account_index = int(input("Enter 1 for checking 2 for savings"))
+
+        account = customer.get_account(account_index-1)
+        
+        atm = ATM(account)
+
         while(menu_choice != '4'):
             display_menu()
-            menu_choice = str(input("Enter Choice: "))
-            menu_options(menu_choice, atm_instance)
+            menu_choice = input("Enter choice: ")
+            handle_menu(menu_choice, atm)
 
-def menu_options(menu_choice, ATM):
+            if(menu_choice == '4'):
+                customer_data.save_customers(list_customers)
+
+def handle_menu(menu_choice, atm):
+
     if(menu_choice == '1'):
-        ATM.make_deposit()
+        atm.make_deposit()
     elif(menu_choice == '2'):
-        ATM.make_withdraw()
+        atm.make_withdraw()
     elif(menu_choice == '3'):
-        ATM.display_balance()
+        atm.display_balance()
     elif(menu_choice == '4'):
-        print("Exiting...")
+        print('Exiting...')
     else:
-        print("Invalid Choice, Exiting...")
+        print("invalid choice")
