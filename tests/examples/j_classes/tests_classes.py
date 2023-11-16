@@ -1,5 +1,4 @@
 import unittest
-
 from src.examples.j_classes.bank_account import BankAccount
 from src.examples.j_classes.customer import Customer
 
@@ -7,17 +6,17 @@ class Test_Config(unittest.TestCase):
 
     def test_Bank_Account_Balance(self):
         account = BankAccount(50)
-        self.assertEqual(account.get_balance(), 50)
+        self.assertEqual(account.get_balance(), "Balance: $50\n")
 
     def test_deposit(self):
         account = BankAccount(200)
         account.deposit(100)
-        self.assertEqual(account.get_balance(), 300)
+        self.assertEqual(account.get_balance(), "Balance: $300\n")
 
     def test_withdraw(self):
         account = BankAccount(200)
         account.withdraw(10)
-        self.assertEqual(account.get_balance(), 190)
+        self.assertEqual(account.get_balance(), "Balance: $190\n")
 
     def test_get_balance_db(self):
         for _ in range(1):

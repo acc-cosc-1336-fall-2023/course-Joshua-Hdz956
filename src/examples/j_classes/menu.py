@@ -1,9 +1,9 @@
-import random
+
 from customer import Customer
 from atm import ATM
 
 def scan_card(customer_list_size):
-    choice = int(input("PIN: "))#1-3 for now
+    choice = int(input("PIN: "))#0-2 for now
     return choice
 
 def display_menu():
