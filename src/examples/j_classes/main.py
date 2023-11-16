@@ -1,5 +1,3 @@
-import bank_account, atm, menu
+import menu, atm
 
-account = bank_account.BankAccount(50)
-my_atm = atm.atm(account)
-menu.run_menu(my_atm)
+menu.run_menu(atm.ATM)

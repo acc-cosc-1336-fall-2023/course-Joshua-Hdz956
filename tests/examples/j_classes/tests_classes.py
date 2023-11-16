@@ -1,6 +1,7 @@
 import unittest
 
 from src.examples.j_classes.bank_account import BankAccount
+from src.examples.j_classes.customer import Customer
 
 class Test_Config(unittest.TestCase):
 
@@ -18,4 +19,17 @@ class Test_Config(unittest.TestCase):
         account.withdraw(10)
         self.assertEqual(account.get_balance(), 190)
 
+    def test_get_balance_db(self):
+        for _ in range(1):
+            account = BankAccount(-1)
+            self.assertTrue(0 <= account.get_balance() <= 10000)
+            print(account.get_balance())
     
+    def test_get_account_customer(self):
+        customer = Customer()
+        account = customer.get_account(0)
+        self.assertTrue(0 <= account.get_balance() <= 10000)
+        account1 = customer.get_account(1)
+        self.assertTrue(0 <= account1.get_balance() <= 10000)
+        print(account)
+        print(account1)

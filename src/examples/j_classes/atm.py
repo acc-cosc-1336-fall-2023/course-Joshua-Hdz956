@@ -1,4 +1,4 @@
-class atm:
+class ATM:
     __bank_account = None
 
     def __init__(self, bank_account):
