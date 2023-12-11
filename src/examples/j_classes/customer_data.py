@@ -1,4 +1,5 @@
 from customer import Customer
+
 class CustomerData:
 
     __file_name = 'customers.dat'
@@ -14,14 +15,14 @@ class CustomerData:
 
     def get_customers(self):
         in_file = open(self.__file_name, 'r')
-        checking_balance = 0
-        savings_balance = 0
+        checking_balance = "0,"
+        savings_balance = "0,"
         list_customers = []
 
         for line in in_file:
             balances = line.rstrip('\n').split(',')
-            checking_balance = int(balances[0])
-            savings_balance = int(balances[1])
+            checking_balance = str(balances[0])
+            savings_balance = str(balances[1])
 
             customer = Customer(checking_balance, savings_balance)
             list_customers.append(customer)
